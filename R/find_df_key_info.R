@@ -23,3 +23,5 @@ find_df_key_info <- function(a_df)
                 no_of_NAs = purrr::map_int(a_df, function(x) sum(is.na(x))))
  return(re_df)
 }
+
+
