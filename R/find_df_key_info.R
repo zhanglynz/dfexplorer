@@ -4,6 +4,7 @@
 #' @param a_df a dataframe
 #' @keywords key info; dataframe
 #' @export
+#' @author Lingyun (Larry) Zhang \email{lyzhang10@gmail.com}
 #' @examples
 #' find_df_key_info()
 

@@ -15,6 +15,9 @@ This function allows you to find key information about a dataframe
 \examples{
 find_df_key_info()
 }
+\author{
+Lingyun (Larry) Zhang \email{lyzhang10@gmail.com}
+}
 \keyword{dataframe}
 \keyword{info;}
 \keyword{key}
