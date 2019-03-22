@@ -13,7 +13,11 @@ find_df_key_info(a_df)
 This function allows you to find key information about a dataframe
 }
 \examples{
-find_df_key_info()
+temp_df <-
+     data.frame(a = 1:10,
+                b = NA,
+                e = c(letters[1:8], NA, NA))
+x <- find_df_key_info(temp_df)
 }
 \author{
 Lingyun (Larry) Zhang \email{lyzhang10@gmail.com}
