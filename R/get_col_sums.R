@@ -3,7 +3,9 @@
 #' This function returns a new dataframe with its last row being the
 #' column sums of the original dataframe. Note that the first column of the
 #' input dataframe must be of character type.
-#' @param a_df: a dataframe
+#' @param a_df: a dataframe;
+#' @param desc_of_row: description of the row,
+#' and the default value is 'Total'
 #' @keywords dataframe; column sums
 #' @export
 #' @author Lingyun (Larry) Zhang \email{lyzhang10@gmail.com}
@@ -16,10 +18,11 @@
 #'
 #' df_with_col_sums <- get_col_sums_added(df)
 
-get_col_sums_added <- function(a_df)
-{a_df[, 1] <- as.character(a_df[, 1])
+get_col_sums_added <- function(a_df, desc_of_row = "Total")
+{a_df <- as.data.frame(a_df)
+ a_df[, 1] <- as.character(a_df[, 1])
  sums <- colSums(a_df[, -1])
- last_row <- c("Total", as.list(sums))
+ last_row <- c(desc_of_row, as.list(sums))
  a_df[nrow(a_df) + 1, ] <- last_row
  return(a_df)
 }
