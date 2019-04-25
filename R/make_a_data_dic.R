@@ -26,7 +26,8 @@ make_a_data_dic <- function(a_df, var_of_interest = 1:dim(a_df)[2])
    dplyr::mutate(no_of_unique_values = purrr::map_int(b_df, function(x) length(unique(x)))) %>%
    dplyr::mutate(var_values = purrr::map(b_df, unique)) %>%
    dplyr::mutate(sample_values = purrr::map(var_values, function(x) {if(length(x) <= 10) return(x); sample(x, 10)})) %>%
-   dplyr::select(var_names, var_type, no_of_unique_values, sample_values)
+   dplyr::select(var_names, var_type, no_of_unique_values, sample_values) %>%
+   dplyr::arrange(var_names)
 
  return(re_df)
 }
