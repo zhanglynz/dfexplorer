@@ -18,7 +18,9 @@ The output will be a simple data dictionary with outputs 'var_names', 'var_type'
 temp_df <-
   data.frame(a = 1:10,
              b = NA,
-             e = c(letters[1:8], NA, NA))
+             d = c(1:9, NA),
+             e = c(letters[1:8], NA, NA),
+             stringsAsFactors = FALSE)
 x <- make_a_data_dic(temp_df)
 }
 \author{
