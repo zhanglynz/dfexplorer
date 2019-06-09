@@ -20,6 +20,7 @@
 make_a_data_dic <- function(a_df, var_of_interest = 1:dim(a_df)[2])
 {b_df <-
   a_df %>%
+  as.data.frame() %>%
   dplyr::select_at(.vars = var_of_interest)
 
  re_df <-
