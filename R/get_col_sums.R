@@ -21,7 +21,7 @@
 get_col_sums_added <- function(a_df, desc_of_row = "Total")
 {a_df <- as.data.frame(a_df)
  a_df[, 1] <- as.character(a_df[, 1])
- sums <- colSums(a_df[, -1])
+ sums <- colSums(as.matrix(a_df[, -1]))
  last_row <- c(desc_of_row, as.list(sums))
  a_df[nrow(a_df) + 1, ] <- last_row
  return(a_df)
