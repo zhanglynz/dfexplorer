@@ -24,7 +24,7 @@ make_a_data_dic <- function(a_df, var_of_interest = 1:dim(a_df)[2])
   dplyr::select_at(.vars = var_of_interest)
 
  re_df <-
-   data.frame(var_names = names(b_df)) %>%
+   data.frame(var_name = names(b_df)) %>%
    dplyr::mutate(var_type = purrr::map_chr(b_df, typeof)) %>%
    dplyr::mutate(no_of_unique_values = purrr::map_int(b_df, function(x) length(unique(x)))) %>%
    dplyr::mutate(var_values = purrr::map(b_df, unique)) %>%
@@ -34,8 +34,8 @@ make_a_data_dic <- function(a_df, var_of_interest = 1:dim(a_df)[2])
         c(min(x, na.rm = TRUE), quantile(x, 0.25, na.rm = TRUE),
         quantile(x, 0.5, na.rm = TRUE), quantile(x, 0.75, na.rm = TRUE),
         max(x, na.rm = TRUE))})) %>%
-   dplyr::select(var_names, var_type, no_of_unique_values, sample_values, min_Q1_Q2_Q3_max) %>%
-   dplyr::arrange(var_names)
+   dplyr::select(var_name, var_type, no_of_unique_values, sample_values, min_Q1_Q2_Q3_max) %>%
+   dplyr::arrange(var_name)
 
  return(re_df)
 }

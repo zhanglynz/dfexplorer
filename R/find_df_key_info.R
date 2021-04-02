@@ -16,16 +16,19 @@
 
 find_df_key_info <- function(a_df)
 {re_df <-
-  data.frame(vari_names = names(a_df)) %>%
+  data.frame(vari_name = names(a_df)) %>%
   dplyr::mutate(type = purrr::map_chr(a_df, typeof),
                 no_of_unique_rows = purrr::map_int(a_df, function(x) length(unique(x))),
                 no_of_rows = dim(a_df)[1],
                 no_of_NAs = purrr::map_int(a_df, function(x) sum(is.na(x))),
-                min_width = purrr::map_dbl(a_df, function(x) min(stringr::str_length(x), na.rm = TRUE)),
-                max_width = purrr::map_dbl(a_df, function(x) max(stringr::str_length(x), na.rm = TRUE))) %>%
-  dplyr::mutate(min_width = ifelse(is.infinite(min_width), NA_real_, min_width),
-                max_width = ifelse(is.infinite(max_width), NA_real_, max_width)) %>%
-  dplyr::arrange(vari_names)
+                min_width = purrr::map_dbl(a_df, function(x) modified_min(stringr::str_length(x))),
+                max_width = purrr::map_dbl(a_df, function(x) modified_max(stringr::str_length(x)))) %>%
+  dplyr::mutate(var_values = purrr::map(a_df, unique)) %>%
+  dplyr::mutate(sample_values = purrr::map(var_values, function(x) {if(length(x) <= 10) return(x);
+                                                         sample(x, 10)})) %>%
+  dplyr::select(-var_values) %>%
+
+  dplyr::arrange(vari_name)
  return(re_df)
 }
 
