@@ -7,9 +7,9 @@
 get_col_sums_added(a_df, desc_of_row = "Total")
 }
 \arguments{
-\item{a_df:}{a dataframe;}
+\item{a_df}{a dataframe;}
 
-\item{desc_of_row:}{description of the row,
+\item{desc_of_row}{description of the row,
 and the default value is 'Total'}
 }
 \description{

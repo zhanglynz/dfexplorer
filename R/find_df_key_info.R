@@ -5,6 +5,8 @@
 #' @keywords key info; dataframe
 #' @export
 #' @author Lingyun (Larry) Zhang \email{lyzhang10@gmail.com}
+#' @importFrom magrittr %>%
+#' @import rlang
 #' @examples
 #' temp_df <-
 #'      data.frame(a = 1:10,
@@ -12,7 +14,7 @@
 #'                 e = c(letters[1:8], NA, NA))
 #' x <- find_df_key_info(temp_df)
 
-#' @importFrom magrittr %>%
+#' @importFrom rlang .data
 
 find_df_key_info <- function(a_df)
 {re_df <-

@@ -7,9 +7,9 @@
 make_a_data_dic(a_df, var_of_interest = 1:dim(a_df)[2])
 }
 \arguments{
-\item{a_df:}{a dataframe}
+\item{a_df}{a dataframe}
 
-\item{var_of_interest:}{numeric positions of interesting variables, and the default is to choose all the variables}
+\item{var_of_interest}{numeric positions of interesting variables, and the default is to choose all the variables}
 }
 \description{
 The output will be a simple data dictionary with outputs 'var_names', 'var_type', 'no_of_unique_values', 'sample_values'

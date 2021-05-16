@@ -6,7 +6,9 @@ Author: Lingyun (Larry) Zhang
 Maintainer: Lingyun (Larry) Zhang <lyzhang10@gmail.com>
 Description: This package contains functions for explore "new" data in a dataframe
 Imports:
+    rlang,
     dplyr, 
+    stringr,
     magrittr,
     purrr
 License: GPL-3

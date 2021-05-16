@@ -7,16 +7,17 @@
 make_concordance(a_df, v1, v2)
 }
 \arguments{
-\item{a_df:}{a dataframe;}
+\item{a_df}{a dataframe;}
 
-\item{v1:}{a varaible of a_df;}
+\item{v1}{a varaible of a_df;}
 
-\item{v2:}{another variable of a_df}
+\item{v2}{another variable of a_df}
 }
 \description{
 This function makes a dataframe, which is for a concordance
 }
 \examples{
+require(dplyr)
 a_df <-
   data.frame(x = sample(letters)) \%>\%
   mutate(y = toupper(x),

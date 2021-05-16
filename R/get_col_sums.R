@@ -3,8 +3,8 @@
 #' This function returns a new dataframe with its last row being the
 #' column sums of the original dataframe. Note that the first column of the
 #' input dataframe must be of character type.
-#' @param a_df: a dataframe;
-#' @param desc_of_row: description of the row,
+#' @param a_df a dataframe;
+#' @param desc_of_row description of the row,
 #' and the default value is 'Total'
 #' @keywords dataframe; column sums
 #' @export
