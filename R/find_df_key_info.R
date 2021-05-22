@@ -1,24 +1,23 @@
 #' find key information about a dataframe
 #'
-#' This function allows you to find key information about a dataframe
-#' @param a_df a dataframe
-#' @keywords key info; dataframe
+#' This function allows you to find key information about a dataframe.
+#' @param a_df A dataframe
 #' @export
 #' @author Lingyun (Larry) Zhang \email{lyzhang10@gmail.com}
 #' @importFrom magrittr %>%
-#' @import rlang
+#' @importFrom rlang .data
 #' @examples
 #' temp_df <-
 #'      data.frame(a = 1:10,
 #'                 b = NA,
-#'                 e = c(letters[1:8], NA, NA))
+#'                 e = c(letters[1:8], NA, NA),
+#'                 stringAsFactor = FALSE)
 #' x <- find_df_key_info(temp_df)
 
-#' @importFrom rlang .data
 
 find_df_key_info <- function(a_df)
 {re_df <-
-  data.frame(vari_name = names(a_df)) %>%
+  data.frame(vari_name = names(a_df), stringsAsFactors = FALSE) %>%
   dplyr::mutate(type = purrr::map_chr(a_df, typeof),
                 no_of_unique_rows = purrr::map_int(a_df, function(x) length(unique(x))),
                 no_of_rows = dim(a_df)[1],
