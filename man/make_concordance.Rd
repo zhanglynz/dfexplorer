@@ -7,19 +7,19 @@
 make_concordance(a_df, v1, v2)
 }
 \arguments{
-\item{a_df}{a dataframe;}
+\item{a_df}{A dataframe;}
 
-\item{v1}{a varaible of a_df;}
+\item{v1}{A varaible of a_df;}
 
-\item{v2}{another variable of a_df}
+\item{v2}{Another variable of a_df}
 }
 \description{
-This function makes a dataframe, which is for a concordance
+This function creats a dataframe, which is for a concordance.
 }
 \examples{
 require(dplyr)
 a_df <-
-  data.frame(x = sample(letters)) \%>\%
+  data.frame(x = sample(letters), stringAsFactor = FALSE) \%>\%
   mutate(y = toupper(x),
          z = rnorm(26))
 concordance_df <- make_concordance(a_df, "x", "y")
@@ -27,5 +27,3 @@ concordance_df <- make_concordance(a_df, "x", "y")
 \author{
 Lingyun (Larry) Zhang \email{lyzhang10@gmail.com}
 }
-\keyword{concordance;}
-\keyword{dataframe}

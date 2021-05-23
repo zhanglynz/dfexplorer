@@ -7,21 +7,19 @@
 find_df_key_info(a_df)
 }
 \arguments{
-\item{a_df}{a dataframe}
+\item{a_df}{A dataframe}
 }
 \description{
-This function allows you to find key information about a dataframe
+This function allows you to find key information about a dataframe.
 }
 \examples{
 temp_df <-
      data.frame(a = 1:10,
                 b = NA,
-                e = c(letters[1:8], NA, NA))
+                e = c(letters[1:8], NA, NA),
+                stringAsFactor = FALSE)
 x <- find_df_key_info(temp_df)
 }
 \author{
 Lingyun (Larry) Zhang \email{lyzhang10@gmail.com}
 }
-\keyword{dataframe}
-\keyword{info;}
-\keyword{key}

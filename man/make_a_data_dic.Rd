@@ -7,12 +7,12 @@
 make_a_data_dic(a_df, var_of_interest = 1:dim(a_df)[2])
 }
 \arguments{
-\item{a_df}{a dataframe}
+\item{a_df}{A dataframe}
 
-\item{var_of_interest}{numeric positions of interesting variables, and the default is to choose all the variables}
+\item{var_of_interest}{Numeric positions of interesting variables, and the default is to choose all the variables}
 }
 \description{
-The output will be a simple data dictionary with outputs 'var_names', 'var_type', 'no_of_unique_values', 'sample_values'
+The output will be a simple data dictionary with outputs 'var_names', 'var_type', 'no_of_unique_values', 'sample_values'.
 }
 \examples{
 temp_df <-
@@ -22,10 +22,8 @@ temp_df <-
              e = c(letters[1:8], NA, NA),
              stringsAsFactors = FALSE)
 x <- make_a_data_dic(temp_df)
+
 }
 \author{
 Lingyun (Larry) Zhang \email{lyzhang10@gmail.com}
 }
-\keyword{data}
-\keyword{dataframe;}
-\keyword{dictionary}

@@ -33,4 +33,12 @@ find_df_key_info <- function(a_df)
  return(re_df)
 }
 
+min_Q1_Q2_Q3_max <- NULL
+no_of_unique_values <- NULL
+sample_values <- NULL
+var_name <- NULL
+var_type <- NULL
+var_values <- NULL
+vari_name <- NULL
+
 

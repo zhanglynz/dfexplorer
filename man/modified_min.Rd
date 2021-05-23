@@ -7,13 +7,11 @@
 modified_min(an_integer_vec)
 }
 \arguments{
-\item{an_integer_vec}{a vector}
+\item{an_integer_vec}{A vector}
 }
 \description{
-if an_integer_vec has only NA's then return 0, otherwise return min(x, na.rm = TRUE)
+if an_integer_vec has only NA's then return 0, otherwise return \code{min(x, na.rm = TRUE)}.
 }
 \author{
 Lingyun (Larry) Zhang \email{lyzhang10@gmail.com}
 }
-\keyword{min}
-\keyword{modidied}

@@ -3,10 +3,9 @@
 #' This function returns a new dataframe with its last row being the
 #' column sums of the original dataframe. Note that the first column of the
 #' input dataframe must be of character type.
-#' @param a_df a dataframe;
-#' @param desc_of_row description of the row,
-#' and the default value is 'Total'
-#' @keywords dataframe; column sums
+#' @param a_df A dataframe.
+#' @param desc_of_row Description of the row,
+#'        and the default value is 'Total'.
 #' @export
 #' @author Lingyun (Larry) Zhang \email{lyzhang10@gmail.com}
 #' @examples
@@ -14,7 +13,8 @@
 #'   data.frame(x = letters[1:10],
 #'              y = 1,
 #'              z = 2,
-#'              w = rnorm(10))
+#'              w = rnorm(10),
+#'              stringAsFactor = FALSE)
 #'
 #' df_with_col_sums <- get_col_sums_added(df)
 
